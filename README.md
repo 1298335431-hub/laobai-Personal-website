@@ -1,4 +1,4 @@
-[![白一帆的动态星图 · 点击进入作品集](./assets/portfolio-starmap-dark.svg)](https://1298335431-hub.github.io/laobai-Personal-website/star-map-portfolio.html)
+[![白一帆的动态星图 · 点击进入作品集](./assets/portfolio-starmap-dark.svg)](https://1298335431-hub.github.io/laobai-Personal-website/)
 
 <p align="center">点击上方动态星图，进入我的个人作品集。</p>
 
@@ -10,10 +10,11 @@
 
 ## 页面入口
 
-- [在线访问作品集](https://1298335431-hub.github.io/laobai-Personal-website/star-map-portfolio.html) — 点击即可浏览完整页面。
+- [在线访问作品集](https://1298335431-hub.github.io/laobai-Personal-website/) — 点击即可浏览完整页面。
 
 - [星图作品集源码](./star-map-portfolio.html) — 新增的独立页面，样式与交互脚本都包含在一个 HTML 文件中。
-- [原首页源码](./index.html) — 仓库原有首页，配套文件为 `style.css` 和 `script.js`。
+- [默认首页源码](./index.html) — 打开网站根地址即显示深蓝动态星图作品集。
+- [旧首页备份](./legacy-home.html) — 原有首页，配套文件为 `style.css` 和 `script.js`。
 
 顶部星图和在线访问链接会打开实际网页；源码链接用于查看文件内容。
 
@@ -40,11 +41,13 @@
 python3 -m http.server 8000
 ```
 
-然后访问 [本地星图作品集](http://localhost:8000/star-map-portfolio.html)。原首页对应 [本地首页](http://localhost:8000/)。
+然后访问 [本地星图作品集](http://localhost:8000/star-map-portfolio.html)。默认首页对应 [本地首页](http://localhost:8000/)，旧版可通过 `legacy-home.html` 访问。
 
 ## 更新内容
 
-在 `star-map-portfolio.html` 中搜索 `const portfolioData`，集中修改以下数据：
+当前默认首页为 `index.html`。`star-map-portfolio.html` 保留原独立访问地址，修改内容时可同步更新这两个文件。
+
+在 `index.html` 中搜索 `const portfolioData`，集中修改以下数据：
 
 | 字段 | 内容 |
 | --- | --- |
@@ -99,7 +102,8 @@ python3 -m http.server 8000
 ```text
 .
 ├── assets/portfolio-starmap-dark.svg # README 顶部可点击动画
-├── index.html                 # 原有首页
+├── index.html                 # 默认首页，深蓝动态星图作品集
+├── legacy-home.html           # 旧首页备份
 ├── style.css                  # 原有页面样式
 ├── script.js                  # 原有页面交互
 ├── star-map-portfolio.html     # 独立星图作品集
