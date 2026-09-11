@@ -1,4 +1,4 @@
-[![白一帆的动态星图 · 点击进入作品集](./assets/portfolio-banner.svg)](https://1298335431-hub.github.io/laobai-Personal-website/star-map-portfolio.html)
+[![白一帆的动态星图 · 点击进入作品集](./assets/portfolio-banner.svg?v=b26531f)](https://1298335431-hub.github.io/laobai-Personal-website/star-map-portfolio.html)
 
 <p align="center">点击上方动态星图，进入我的个人作品集。</p>
 
