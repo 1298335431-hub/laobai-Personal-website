@@ -1,3 +1,7 @@
+[![白一帆的动态星图 · 点击进入作品集](./assets/portfolio-banner.svg)](https://1298335431-hub.github.io/laobai-Personal-website/star-map-portfolio.html)
+
+<p align="center">点击上方动态星图，进入我的个人作品集。</p>
+
 # 白一帆 · AI 产品经理作品集
 
 以处女座星图作为入口的个人作品集，围绕 AI 产品、研究、开发与表达，展示项目实践、个人介绍和文章思考。
@@ -6,10 +10,12 @@
 
 ## 页面入口
 
+- [在线访问作品集](https://1298335431-hub.github.io/laobai-Personal-website/star-map-portfolio.html) — 点击即可浏览完整页面。
+
 - [星图作品集源码](./star-map-portfolio.html) — 新增的独立页面，样式与交互脚本都包含在一个 HTML 文件中。
 - [原首页源码](./index.html) — 仓库原有首页，配套文件为 `style.css` 和 `script.js`。
 
-GitHub 中的文件链接用于查看源码。预览实际页面，请下载后用浏览器打开。
+顶部星图和在线访问链接会打开实际网页；源码链接用于查看文件内容。
 
 ## 星图版功能
 
@@ -92,6 +98,7 @@ python3 -m http.server 8000
 
 ```text
 .
+├── assets/portfolio-banner.svg # README 顶部可点击动画
 ├── index.html                 # 原有首页
 ├── style.css                  # 原有页面样式
 ├── script.js                  # 原有页面交互
