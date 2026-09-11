@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+<title id="title">白一帆 · 个人能力星图 · 点击进入作品集</title>
+<desc id="desc">米白色处女座星图，星点呼吸闪烁，光线沿星座连线流动。AI 产品、研究、开发与表达。</desc>
+<defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#ddd8cd" stroke-width=".6"/></pattern></defs>
+<style>
+text{font-family:Arial,'PingFang SC','Microsoft YaHei',sans-serif;fill:#272823}
+.mono{font-family:monospace;letter-spacing:2px}.muted{fill:#797970}
+.sm-grid{stroke:#e2ddd2;stroke-width:.7}.sm-star{fill:#8e9682;opacity:.55}.sm-grain{fill:#aaa89d;opacity:.4}
+.sm-route-base{fill:none;stroke:#a4ad94;stroke-width:1.4}
+.sm-route{fill:none;stroke:#69794f;stroke-width:2.5;stroke-dasharray:.15 .85;animation:travel 7s linear infinite}
+.sm-node,.sm-project{fill:#67794e}.sm-node{animation:glimmer 4s ease-in-out infinite}
+.sm-core{fill:#ad5b40}.sm-core-orbit{fill:none;stroke:#ad5b40;stroke-width:1;opacity:.3;animation:glimmer 4s ease-in-out infinite}
+.sm-core-label{font-size:18px;fill:#ad5b40}.label{font-size:18px;font-weight:600}
+.status{animation:glimmer 3s ease-in-out infinite}
+@keyframes travel{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes glimmer{0%,100%{opacity:.35}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect x="12" y="16" width="1180" height="536" rx="24" fill="#272823"/>
+<rect x="4" y="4" width="1180" height="536" rx="24" fill="#f8f5ec" stroke="#272823" stroke-width="2"/>
+<rect x="6" y="6" width="1176" height="532" rx="23" fill="url(#grid)"/>
+
+
+<path d="M5 76H1184" stroke="#272823" stroke-width="1.5"/>
+<text x="40" y="49" class="mono" font-size="16" font-weight="bold">BAI YIFAN / PORTFOLIO</text>
+<circle cx="981" cy="43" r="4" fill="#6a7b50" class="status"/>
+<text x="998" y="49" class="mono muted" font-size="13">PROFILE MAP</text>
+<text x="48" y="143" font-size="14" class="mono" style="fill:#a65b43">AI PRODUCT MANAGER</text>
+<text x="44" y="227" font-size="68" font-weight="600">白一帆</text>
+<text x="48" y="282" font-size="23">把 AI 想法，</text>
+<text x="48" y="320" font-size="23">做成可用的产品。</text>
+<text x="48" y="375" class="muted" font-size="16">AI 产品 · 研究 · 开发 · 表达</text>
+<rect x="48" y="405" width="238" height="49" rx="24" fill="#283127"/>
+<text x="73" y="436" font-size="17" style="fill:#faf8ef">进入我的作品集</text>
+<text x="253" y="436" font-size="20" style="fill:#faf8ef">↗</text>
+<svg x="426" y="86" width="732" height="400" viewBox="405 60 745 435"><metadata>星座几何改编：白一帆个人网站；基于 Stellarium modern 星座连线，CC BY-SA 4.0，https://github.com/Stellarium/stellarium/blob/master/skycultures/modern/index.json 。坐标来源 https://simbad.cds.unistra.fr/simbad/ 。本页处女座几何改编同样遵循 https://creativecommons.org/licenses/by-sa/4.0/ 。</metadata>
+<line x1="405" y1="112" x2="1140" y2="112" class="sm-grid" />
+<line x1="405" y1="280" x2="1140" y2="280" class="sm-grid" />
+<line x1="405" y1="448" x2="1140" y2="448" class="sm-grid" />
+<line x1="500" y1="72" x2="500" y2="500" class="sm-grid" />
+<line x1="700" y1="72" x2="700" y2="500" class="sm-grid" />
+<line x1="900" y1="72" x2="900" y2="500" class="sm-grid" />
+<line x1="1100" y1="72" x2="1100" y2="500" class="sm-grid" />
+<circle r="2" cx="438" cy="92" class="sm-star" />
+<circle r="1.5" cx="475" cy="205" class="sm-star" />
+<circle r="1.2" cx="527" cy="132" class="sm-star" />
+<circle r="1.8" cx="586" cy="86" class="sm-star" />
+<circle r="1.1" cx="630" cy="185" class="sm-star" />
+<circle r="1.5" cx="742" cy="96" class="sm-star" />
+<circle r="1.2" cx="792" cy="216" class="sm-star" />
+<circle r="1.7" cx="925" cy="88" class="sm-star" />
+<circle r="1.2" cx="1008" cy="135" class="sm-star" />
+<circle r="1.4" cx="1123" cy="184" class="sm-star" />
+<circle r="1.2" cx="1082" cy="335" class="sm-star" />
+<circle r="1.5" cx="974" cy="468" class="sm-star" />
+<circle r="1.2" cx="763" cy="478" class="sm-star" />
+<circle r="1.4" cx="643" cy="390" class="sm-star" />
+<circle r="1.1" cx="504" cy="472" class="sm-star" />
+<circle r="1.2" cx="1118" cy="492" class="sm-star" />
+<circle r="0.7" cx="422" cy="158" class="sm-grain" />
+<circle r="0.7" cx="455" cy="372" class="sm-grain" />
+<circle r="0.7" cx="491" cy="248" class="sm-grain" />
+<circle r="0.7" cx="548" cy="332" class="sm-grain" />
+<circle r="0.7" cx="612" cy="118" class="sm-grain" />
+<circle r="0.7" cx="666" cy="470" class="sm-grain" />
+<circle r="0.7" cx="724" cy="156" class="sm-grain" />
+<circle r="0.7" cx="778" cy="365" class="sm-grain" />
+<circle r="0.7" cx="826" cy="96" class="sm-grain" />
+<circle r="0.7" cx="888" cy="323" class="sm-grain" />
+<circle r="0.7" cx="944" cy="176" class="sm-grain" />
+<circle r="0.7" cx="1002" cy="420" class="sm-grain" />
+<circle r="0.7" cx="1064" cy="106" class="sm-grain" />
+<circle r="0.7" cx="1130" cy="278" class="sm-grain" />
+<!-- 处女座实际主星坐标与连线的等比例投影；星点上的文字是本站导航注释。 -->
+<path d="M1070.0 173.92 L956.78 269.68 L884.42 280.12 L739.58 409.3 L580.94 397.48 L570.56 340.66 L480.62 336.1" class="sm-route-base"/>
+<path d="M739.58 409.3 L708.02 268.72 L618.38 240.28 L470.0 235.6" class="sm-route-base"/>
+<path d="M708.02 268.72 L838.04 215.62 L816.14 115.0" class="sm-route-base"/>
+<path d="M838.04 215.62 L884.42 280.12" class="sm-route-base"/>
+<path d="M739.58 409.3 L708.02 268.72 L838.04 215.62 L816.14 115.0" pathLength="1" class="sm-route" style="animation-delay:0.0s"/>
+<path d="M739.58 409.3 L884.42 280.12 L956.78 269.68 L1070.0 173.92" pathLength="1" class="sm-route" style="animation-delay:1.6s"/>
+<path d="M739.58 409.3 L580.94 397.48 L570.56 340.66 L480.62 336.1" pathLength="1" class="sm-route" style="animation-delay:3.2s"/>
+<path d="M739.58 409.3 L708.02 268.72 L618.38 240.28 L470.0 235.6" pathLength="1" class="sm-route" style="animation-delay:4.8s"/>
+<circle cx="1070.0" cy="173.92" r="6" class="sm-node" style="animation-delay:1.6s"/>
+<circle cx="956.78" cy="269.68" r="3" class="sm-project"/>
+<circle cx="884.42" cy="280.12" r="3" class="sm-project"/>
+<circle cx="838.04" cy="215.62" r="3" class="sm-project"/>
+<circle cx="816.14" cy="115.0" r="6" class="sm-node" style="animation-delay:0.0s"/>
+<circle cx="708.02" cy="268.72" r="3" class="sm-project"/>
+<circle cx="618.38" cy="240.28" r="3" class="sm-project"/>
+<circle cx="580.94" cy="397.48" r="3" class="sm-project"/>
+<circle cx="570.56" cy="340.66" r="3" class="sm-project"/>
+<circle cx="480.62" cy="336.1" r="6" class="sm-node" style="animation-delay:3.2s"/>
+<circle cx="470.0" cy="235.6" r="6" class="sm-node" style="animation-delay:4.8s"/>
+<circle cx="739.58" cy="409.3" r="28" class="sm-core-orbit"/>
+<circle cx="739.58" cy="409.3" r="17" class="sm-core-orbit"/>
+<circle cx="739.58" cy="409.3" r="8" class="sm-core"/>
+<text x="739.58" y="452.3" text-anchor="middle" class="sm-core-label">我</text>
+
+        <g class="label"><text x="816" y="83" text-anchor="middle">产品设计</text><text x="1090" y="158" text-anchor="end">AI 研究</text><text x="457" y="215">文章与思考</text><text x="457" y="376">开发实践</text></g></svg>
+<path d="M40 485H1148" stroke="#d5d1c5"/>
+<text x="40" y="517" font-size="13" class="mono muted">VIRGO / 处女座 · 个人能力星图</text>
+<text x="1144" y="517" text-anchor="end" font-size="14" style="fill:#a65b43">点击整张星图，探索作品与思考 ↗</text>
+</svg>
