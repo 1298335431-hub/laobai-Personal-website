@@ -1,39 +1,58 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
-<title id="title">白一帆 · 个人能力星图 · 点击进入作品集</title>
-<desc id="desc">米白色处女座星图，星点呼吸闪烁，光线沿星座连线流动。AI 产品、研究、开发与表达。</desc>
-<defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#ddd8cd" stroke-width=".6"/></pattern></defs>
+<title id="title">白一帆 · 处女座个人能力星图</title><desc id="desc">原作品集首屏的深蓝星图，点击图片进入个人作品集。</desc>
 <style>
-text{font-family:Arial,'PingFang SC','Microsoft YaHei',sans-serif;fill:#272823}
-.mono{font-family:monospace;letter-spacing:2px}.muted{fill:#797970}
-.sm-grid{stroke:#e2ddd2;stroke-width:.7}.sm-star{fill:#8e9682;opacity:.55}.sm-grain{fill:#aaa89d;opacity:.4}
-.sm-route-base{fill:none;stroke:#a4ad94;stroke-width:1.4}
-.sm-route{fill:none;stroke:#69794f;stroke-width:2.5;stroke-dasharray:.15 .85;animation:travel 7s linear infinite}
-.sm-node,.sm-project{fill:#67794e}.sm-node{animation:glimmer 4s ease-in-out infinite}
-.sm-core{fill:#ad5b40}.sm-core-orbit{fill:none;stroke:#ad5b40;stroke-width:1;opacity:.3;animation:glimmer 4s ease-in-out infinite}
-.sm-core-label{font-size:18px;fill:#ad5b40}.label{font-size:18px;font-weight:600}
-.status{animation:glimmer 3s ease-in-out infinite}
-@keyframes travel{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
-@keyframes glimmer{0%,100%{opacity:.35}50%{opacity:1}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+:root{--bg:oklch(0.17 0.035 267);--surface:oklch(0.21 0.033 267);--fg:oklch(0.91 0.012 255);--muted:oklch(0.68 0.022 255);--border:oklch(0.42 0.045 270);--accent:oklch(0.66 0.145 36);--font-body:system-ui,-apple-system,'PingFang SC','Microsoft YaHei',sans-serif}
+text{fill:var(--fg);font-family:var(--font-body)}.muted{fill:var(--muted)}
+    .sm-grid { stroke: var(--border); opacity: .3; stroke-dasharray: 1 9; fill: none; }
+    .sm-star { fill: var(--muted); opacity: .6; animation: sm-stars 8s ease-in-out infinite; }
+    .sm-grain { fill: var(--muted); opacity: .24; }
+    .sm-route-base { fill: none; stroke: var(--border); stroke-width: 1.2; }
+    .sm-route { fill: none; stroke: var(--muted); stroke-width: 1.4; stroke-dasharray: 1; stroke-dashoffset: 0; stroke-linecap: round; animation: sm-draw 8s cubic-bezier(.4,0,.2,1) infinite both; }
+    .sm-core-orbit { fill: none; stroke: var(--border); stroke-width: 1; transform-origin: 739.58px 409.3px; animation: sm-breathe 8s ease-in-out infinite; }
+    .sm-core { fill: var(--fg); stroke: var(--bg); stroke-width: 5; transform-origin: 739.58px 409.3px; animation: sm-breathe 8s ease-in-out infinite; }
+    .sm-core-label { fill: var(--fg); font: 500 14px var(--font-body); letter-spacing: 1px; }
+    .sm-node { fill: var(--bg); stroke: var(--muted); stroke-width: 2; transform-box: fill-box; transform-origin: center; animation: sm-node-pulse 8s ease-in-out infinite; }
+    .sm-project { fill: var(--muted); opacity: .62; transform-box: fill-box; transform-origin: center; animation: sm-project-pulse 8s ease-in-out infinite; }
+    .sm-signal { offset-path: path('M739.58 409.3 L708.02 268.72 L838.04 215.62 L816.14 115.0 L838.04 215.62 L708.02 268.72 L739.58 409.3 L884.42 280.12 L956.78 269.68 L1070.0 173.92 L956.78 269.68 L884.42 280.12 L739.58 409.3 L580.94 397.48 L570.56 340.66 L480.62 336.1 L570.56 340.66 L580.94 397.48 L739.58 409.3 L708.02 268.72 L618.38 240.28 L470.0 235.6 L618.38 240.28 L708.02 268.72 L739.58 409.3'); offset-rotate: 0deg; animation: sm-travel 8s ease-in-out infinite, sm-signal-fade 8s ease-in-out infinite; }
+    .sm-signal-halo { fill: var(--accent); opacity: .12; }
+    .sm-signal-dot { fill: var(--accent); }
+    .starmap[data-paused="true"] *, .starmap[data-offscreen="true"] * { animation-play-state: paused !important; }
+    @keyframes sm-intro { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes sm-stars { 0%,100% { opacity: .3; } 18%,75% { opacity: .68; } }
+    @keyframes sm-breathe { 0%,100% { transform: scale(1); } 48% { transform: scale(1.045); } }
+    @keyframes sm-draw { 0%,4% { stroke-dashoffset: 1; opacity: 0; } 10% { opacity: .7; } 24%,72% { stroke-dashoffset: 0; opacity: .7; } 98%,100% { stroke-dashoffset: 0; opacity: 0; } }
+    @keyframes sm-node-pulse { 0%,100% { transform: scale(1); fill: var(--bg); } 22%,29% { transform: scale(1.1); fill: var(--muted); } 42%,95% { transform: scale(1); fill: var(--bg); } }
+    @keyframes sm-project-pulse { 0%,15%,100% { transform: scale(1); opacity: .62; } 27% { transform: scale(1.18); opacity: 1; } 42%,88% { transform: scale(1); opacity: .62; } }
+    @keyframes sm-signal-fade { 0%,8%,97%,100% { opacity: 0; } 12%,91% { opacity: 1; } }
+    @keyframes sm-arrow { 0%,55%,100% { transform: translate(0,0); } 76% { transform: translate(3px,-3px); } }
+    @keyframes sm-travel {
+      0% { offset-distance: 0.00000%; }
+      10% { offset-distance: 0.00000%; }
+      22% { offset-distance: 12.94735%; }
+      24% { offset-distance: 12.94735%; }
+      30% { offset-distance: 25.89470%; }
+      42% { offset-distance: 39.77670%; }
+      44% { offset-distance: 39.77670%; }
+      50% { offset-distance: 53.65870%; }
+      62% { offset-distance: 63.91286%; }
+      64% { offset-distance: 63.91286%; }
+      70% { offset-distance: 74.16702%; }
+      82% { offset-distance: 87.08351%; }
+      84% { offset-distance: 87.08351%; }
+      94% { offset-distance: 100.00000%; }
+      100% { offset-distance: 100.00000%; }
+    }
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important}.sm-signal{display:none}.sm-route{opacity:.7}}
 </style>
-<rect x="12" y="16" width="1180" height="536" rx="24" fill="#272823"/>
-<rect x="4" y="4" width="1180" height="536" rx="24" fill="#f8f5ec" stroke="#272823" stroke-width="2"/>
-<rect x="6" y="6" width="1176" height="532" rx="23" fill="url(#grid)"/>
-
-
-<path d="M5 76H1184" stroke="#272823" stroke-width="1.5"/>
-<text x="40" y="49" class="mono" font-size="16" font-weight="bold">BAI YIFAN / PORTFOLIO</text>
-<circle cx="981" cy="43" r="4" fill="#6a7b50" class="status"/>
-<text x="998" y="49" class="mono muted" font-size="13">PROFILE MAP</text>
-<text x="48" y="143" font-size="14" class="mono" style="fill:#a65b43">AI PRODUCT MANAGER</text>
-<text x="44" y="227" font-size="68" font-weight="600">白一帆</text>
-<text x="48" y="282" font-size="23">把 AI 想法，</text>
-<text x="48" y="320" font-size="23">做成可用的产品。</text>
-<text x="48" y="375" class="muted" font-size="16">AI 产品 · 研究 · 开发 · 表达</text>
-<rect x="48" y="405" width="238" height="49" rx="24" fill="#283127"/>
-<text x="73" y="436" font-size="17" style="fill:#faf8ef">进入我的作品集</text>
-<text x="253" y="436" font-size="20" style="fill:#faf8ef">↗</text>
-<svg x="426" y="86" width="732" height="400" viewBox="405 60 745 435"><metadata>星座几何改编：白一帆个人网站；基于 Stellarium modern 星座连线，CC BY-SA 4.0，https://github.com/Stellarium/stellarium/blob/master/skycultures/modern/index.json 。坐标来源 https://simbad.cds.unistra.fr/simbad/ 。本页处女座几何改编同样遵循 https://creativecommons.org/licenses/by-sa/4.0/ 。</metadata>
+<rect width="1200" height="560" fill="var(--bg)"/>
+<text x="60" y="60" class="muted" font-size="12" style="font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:1.56px">PROFILE MAP / 2026</text>
+<text x="1140" y="60" text-anchor="end" class="muted" font-size="12" letter-spacing=".6">处女座 · 个人能力星图</text>
+<text x="60" y="192" font-size="52" font-weight="500" style="font-family:Georgia,'Songti SC',STSong,serif;letter-spacing:-2.34px">白一帆</text>
+<text x="60" y="251" font-size="18">AI产品 · 研究 · 开发 · 表达</text>
+<path d="M60 288H330" stroke="var(--border)"/>
+<text x="60" y="323" class="muted" font-size="12" letter-spacing=".96">处女座 · 点击星点，探索我的作品与思考</text>
+<metadata>星座几何改编：白一帆个人网站；基于 Stellarium modern 星座连线，CC BY-SA 4.0，https://github.com/Stellarium/stellarium/blob/master/skycultures/modern/index.json 。坐标来源 https://simbad.cds.unistra.fr/simbad/ 。本页处女座几何改编同样遵循 https://creativecommons.org/licenses/by-sa/4.0/ 。</metadata>
 <line x1="405" y1="112" x2="1140" y2="112" class="sm-grid" />
 <line x1="405" y1="280" x2="1140" y2="280" class="sm-grid" />
 <line x1="405" y1="448" x2="1140" y2="448" class="sm-grid" />
@@ -95,9 +114,13 @@ text{font-family:Arial,'PingFang SC','Microsoft YaHei',sans-serif;fill:#272823}
 <circle cx="739.58" cy="409.3" r="17" class="sm-core-orbit"/>
 <circle cx="739.58" cy="409.3" r="8" class="sm-core"/>
 <text x="739.58" y="452.3" text-anchor="middle" class="sm-core-label">我</text>
-
-        <g class="label"><text x="816" y="83" text-anchor="middle">产品设计</text><text x="1090" y="158" text-anchor="end">AI 研究</text><text x="457" y="215">文章与思考</text><text x="457" y="376">开发实践</text></g></svg>
-<path d="M40 485H1148" stroke="#d5d1c5"/>
-<text x="40" y="517" font-size="13" class="mono muted">VIRGO / 处女座 · 个人能力星图</text>
-<text x="1144" y="517" text-anchor="end" font-size="14" style="fill:#a65b43">点击整张星图，探索作品与思考 ↗</text>
+<g class="sm-signal"><circle r="11" class="sm-signal-halo"/><circle r="4.5" class="sm-signal-dot"/></g>
+        
+<g text-anchor="middle"><rect x="760" y="31" width="112" height="60" fill="var(--bg)"/><text x="816" y="54" font-size="16">产品设计 ↗</text><path d="M775 62H857" stroke="var(--border)"/><text x="816" y="80" class="muted" font-size="11">产品项目</text></g>
+<g text-anchor="middle"><rect x="949" y="143" width="99" height="62" fill="var(--bg)"/><text x="998" y="166" font-size="16">关于我 ↗</text><path d="M962 174H1034" stroke="var(--border)"/><text x="998" y="192" class="muted" font-size="11">AI 研究</text></g>
+<g text-anchor="middle"><rect x="419" y="359" width="123" height="63" fill="var(--bg)"/><text x="480.62" y="382" font-size="16">开发实践 ↗</text><path d="M438 390H524" stroke="var(--border)"/><text x="480.62" y="408" class="muted" font-size="11">Coding 项目</text></g>
+<g text-anchor="middle"><rect x="408" y="152" width="124" height="60" fill="var(--bg)"/><text x="470" y="175" font-size="16">文章与思考 ↗</text><path d="M418 183H522" stroke="var(--border)"/><text x="470" y="201" class="muted" font-size="11">公开写作</text></g>
+<text x="60" y="516" class="muted" font-size="11">Stellarium · CC BY-SA 4.0</text>
+<text x="984" y="516" font-size="16">进入个人网站</text><text x="1125" y="516" font-size="18" style="animation:sm-arrow 2s ease-in-out infinite">↗</text>
+<path d="M984 531H1140" stroke="var(--accent)"/>
 </svg>
