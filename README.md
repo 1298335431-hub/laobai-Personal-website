@@ -8,7 +8,7 @@
 
 | 项目 | 内容 | 入口 |
 | --- | --- | --- |
-| 贴贴 / Tietie | 邀请制 AI 图片创作与轻社交，提供三风格生成、二次优化与图文发布包 | [内测体验](https://sv47l1ha6bddrf233tutq.apigateway-cn-beijing.volceapi.com/)（需要邀请码） |
+| 贴贴 / Tietie | 邀请制 AI 图片创作与轻社交，提供三风格生成、二次优化与图文发布包 | [内测体验](https://sv47l1ha6bddrf233tutq.apigateway-cn-beijing.volceapi.com/)（需要邀请码） · [源码](https://github.com/1298335431-hub/tietie) |
 | 看山说梦 / LUCIDREAM | 梦境记录、梦象确认、参考性解读与梦卡 | [在线体验](https://seoshulk2a6fn66jib6rs.apigateway-cn-beijing.volceapi.com/) · [源码](https://github.com/1298335431-hub/lucidream) |
 | 竞品研究工作流 | 研究范围、来源核验、竞品对比与垂直场景分析 | [工作流与模板](https://github.com/1298335431-hub/Skills/tree/main/competitive-analysis) |
 | 英语口语陪练 | 中英结合解释、情境对话、逐轮反馈与迁移练习 | [Learn Spoken English](https://github.com/1298335431-hub/learn-spoken-english) |
