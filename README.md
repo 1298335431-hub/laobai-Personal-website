@@ -9,7 +9,7 @@
 | 项目 | 简介 | 体验 | 源码 |
 | --- | --- | --- | --- |
 | 梦卡 | 从梦境输入、梦象确认到解读与梦卡生成 | [在线体验](https://seoshulk2a6fn66jib6rs.apigateway-cn-beijing.volceapi.com/) | [lucidream](https://github.com/1298335431-hub/lucidream) |
-| MeetingPrep | 将 PRD、历史讨论和日历整理成有出处的会前 Brief | [在线体验](https://s5gpjstgrhrpqd54s6976.apigateway-cn-beijing.volceapi.com/) | [meeting-prep](https://github.com/1298335431-hub/meeting-prep) |
+| MeetingPrep | 选择会议模板，导入 PRD 与历史记录，生成说清背景和讨论方向的会前 Brief | [在线体验](https://s5gpjstgrhrpqd54s6976.apigateway-cn-beijing.volceapi.com/) | [meeting-prep](https://github.com/1298335431-hub/meeting-prep) |
 | 贴贴 | 以开源 Skill 创作图片，通过作品分享和“碰一碰”产生互动的轻社交产品 | [内测体验](https://sv47l1ha6bddrf233tutq.apigateway-cn-beijing.volceapi.com/) | [tietie](https://github.com/1298335431-hub/tietie) |
 
 ## 页面内容
