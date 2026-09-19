@@ -3,14 +3,271 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>白一帆 · AI 产品经理作品集</title>
-  <meta name="description" content="白一帆的 AI 产品经理作品集，公开产品原型、Agent 工作流与项目文档。">
-  <link rel="canonical" href="https://1298335431-hub.github.io/laobai-Personal-website/star-map-portfolio.html">
-  <meta http-equiv="refresh" content="0; url=star-map-portfolio.html">
-  <style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#11192d;color:#e2e6ed;font:16px/1.8 system-ui,sans-serif}main{padding:32px}a{color:inherit;text-underline-offset:5px}</style>
+  <title>白一帆 · AI 产品作品集</title>
+  <meta name="description" content="白一帆的 AI 产品作品集，展示梦卡、MeetingPrep 与贴贴三个可体验项目。">
+  <meta name="theme-color" content="#f4f2ec">
+  <meta property="og:title" content="白一帆 · AI 产品作品集">
+  <meta property="og:description" content="复杂留给模型，清晰留给用户。查看梦卡、MeetingPrep 与贴贴。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://1298335431-hub.github.io/laobai-Personal-website/">
+  <meta property="og:image" content="https://1298335431-hub.github.io/laobai-Personal-website/assets/dreamcard-ui-cover.png">
+  <link rel="canonical" href="https://1298335431-hub.github.io/laobai-Personal-website/">
+  <style>
+    :root {
+      --paper: #f4f2ec;
+      --paper-2: #ece9e1;
+      --ink: #171917;
+      --muted: #686c65;
+      --line: rgba(23, 25, 23, .13);
+      --white: #fff;
+      --blue: #3158e7;
+      --dream: #b3abd8;
+      --meeting: #b9d5e1;
+      --tietie: #b8caae;
+      --radius: 32px;
+      --wrap: 1240px;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      font-synthesis: none;
+      -webkit-font-smoothing: antialiased;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body { margin: 0; background: var(--paper); }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    h1, h2, h3, p, figure { margin: 0; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a:focus-visible { outline: 3px solid var(--blue); outline-offset: 5px; }
+    .wrap { width: min(var(--wrap), calc(100% - 72px)); margin-inline: auto; }
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(244, 242, 236, .86);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner { height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 13px; font-weight: 720; letter-spacing: -.02em; }
+    .brand-mark { position: relative; display: grid; place-items: center; width: 39px; height: 39px; overflow: hidden; border-radius: 13px; color: #fff; background: var(--ink); box-shadow: inset 0 0 0 1px rgba(255,255,255,.1); }
+    .brand-mark svg { width: 25px; height: 25px; overflow: visible; }
+    .brand small { display: block; margin-top: 2px; color: var(--muted); font-size: 10px; font-weight: 560; letter-spacing: .12em; }
+    .nav-links { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 13px; }
+    .nav-links a { padding: 9px 14px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.58); transition: color .2s ease, border-color .2s ease, background .2s ease, transform .2s ease; }
+    .nav-links a:hover { color: var(--ink); border-color: rgba(23,25,23,.3); background: rgba(255,255,255,.9); transform: translateY(-1px); }
+    .nav-links .nav-cta { padding: 10px 16px; color: #fff !important; background: var(--ink); border-color: var(--ink); border-radius: 999px; }
+    .nav-links .nav-cta:hover { color: #fff !important; background: #292c29; border-color: #292c29; }
+    .hero { padding: 92px 0 86px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: .94fr 1.06fr; gap: 72px; align-items: center; }
+    .kicker { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .16em; }
+    .kicker::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 6px rgba(49, 88, 231, .1); }
+    h1 { margin-top: 28px; font-size: clamp(54px, 6vw, 84px); line-height: 1.02; letter-spacing: -.065em; font-weight: 690; }
+    h1 span { color: var(--blue); }
+    .hero-lead { margin-top: 28px; max-width: 620px; color: #3f433e; font-size: 17px; line-height: 1.9; }
+    .hero-lead strong { color: var(--ink); font-weight: 660; }
+    .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 49px; padding: 12px 20px; border-radius: 999px; border: 1px solid var(--line); font-size: 13px; font-weight: 650; transition: .2s ease; }
+    .btn:hover { transform: translateY(-2px); border-color: var(--ink); }
+    .btn.primary { color: #fff; background: var(--blue); border-color: var(--blue); box-shadow: 0 12px 30px rgba(49, 88, 231, .2); }
+    .btn.primary:hover { background: #2447c9; }
+    .identity-card { max-width: 590px; margin-top: 38px; padding: 16px; display: grid; grid-template-columns: 68px 1fr; gap: 16px; align-items: center; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.58); box-shadow: 0 16px 38px rgba(23,25,23,.06); }
+    .identity-card img { width: 68px; height: 68px; border-radius: 15px; object-fit: cover; object-position: center 39%; filter: saturate(.9); }
+    .identity-name { display: flex; align-items: baseline; flex-wrap: wrap; gap: 9px; }
+    .identity-name strong { font-size: 18px; letter-spacing: -.025em; }
+    .identity-name span { color: var(--muted); font-size: 12px; }
+    .identity-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .identity-meta span { padding: 5px 8px; border-radius: 999px; background: rgba(49,88,231,.08); color: #2949be; font-size: 9px; font-weight: 650; }
+    .identity-now { margin-top: 9px; color: var(--muted); font-size: 11px; }
+    .product-stage { position: relative; min-height: 590px; }
+    .stage-glow { position: absolute; inset: 8% 4% 4%; border-radius: 50%; background: radial-gradient(circle, rgba(49, 88, 231, .18), rgba(49, 88, 231, 0) 68%); filter: blur(14px); }
+    .screen { position: absolute; overflow: hidden; border: 1px solid rgba(255,255,255,.72); background: #fff; box-shadow: 0 34px 80px rgba(30, 34, 32, .15); }
+    .screen img { width: 100%; height: 100%; object-fit: cover; }
+    .screen-dream { z-index: 3; left: 0; top: 16%; width: 68%; aspect-ratio: 1.5; padding: 9px; border-radius: 26px; background: #ddd8ed; transform: rotate(-4deg); }
+    .screen-dream img { border-radius: 18px; }
+    .screen-meeting { z-index: 2; right: 0; top: 1%; width: 55%; aspect-ratio: 1.5; padding: 9px; border-radius: 27px; background: #e7f0f4; transform: rotate(5deg); }
+    .screen-meeting img { border-radius: 18px; }
+    .screen-tietie { z-index: 4; right: 3%; bottom: 3%; width: 61%; aspect-ratio: 1.5; padding: 9px; border-radius: 27px; background: #e8eee4; transform: rotate(-1deg); }
+    .screen-tietie img { border-radius: 18px; }
+    .screen-dream { animation: float-dream 8s ease-in-out infinite; }
+    .screen-meeting { animation: float-meeting 8.6s ease-in-out -2.6s infinite; }
+    .screen-tietie { animation: float-tietie 7.6s ease-in-out -4.8s infinite; }
+    .screen:hover { z-index: 8; animation-play-state: paused; }
+    @keyframes float-dream { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-13px) rotate(-2.5deg); } }
+    @keyframes float-meeting { 0%,100% { transform: translateY(0) rotate(5deg); } 50% { transform: translateY(12px) rotate(3.5deg); } }
+    @keyframes float-tietie { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-10px) rotate(.5deg); } }
+    .mini-head { display: flex; align-items: center; justify-content: space-between; color: #58704d; font-size: 9px; letter-spacing: .13em; }
+    .mini-brand { display: flex; align-items: center; gap: 8px; }
+    .mini-brand img { width: 26px; height: 26px; border-radius: 8px; }
+    .style-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-top: 18px; }
+    .style-card { min-height: 107px; padding: 12px 9px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(63,82,55,.13); border-radius: 16px; background: rgba(255,255,255,.65); }
+    .style-card i { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 13px; background: #c8d8c0; color: #43613a; font-style: normal; font-size: 17px; }
+    .style-card:nth-child(2) i { background: #ddd3bf; color: #755f3b; }
+    .style-card:nth-child(3) i { background: #c8d7d7; color: #3f6161; }
+    .style-card span { font-size: 10px; font-weight: 650; }
+    .stage-label { position: absolute; z-index: 6; left: 2%; bottom: 1%; padding: 10px 14px; border: 1px solid rgba(255,255,255,.75); border-radius: 999px; background: rgba(255,255,255,.86); backdrop-filter: blur(12px); font-size: 11px; box-shadow: 0 12px 32px rgba(23,25,23,.08); }
+    .section { padding: 92px 0; border-top: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; align-items: end; margin-bottom: 48px; }
+    .section-number { color: var(--blue); font-size: 10px; font-weight: 750; letter-spacing: .17em; }
+    h2 { margin-top: 13px; font-size: clamp(36px, 4vw, 56px); line-height: 1.08; letter-spacing: -.052em; }
+    .section-intro { max-width: 620px; color: var(--muted); font-size: 16px; line-height: 1.85; justify-self: end; }
+    .projects { display: grid; gap: 26px; }
+    .project { position: relative; min-height: 560px; display: grid; grid-template-columns: .82fr 1.18fr; overflow: hidden; border-radius: var(--radius); border: 1px solid rgba(23,25,23,.08); }
+    .project-copy { padding: 52px; display: flex; flex-direction: column; align-items: flex-start; }
+    .project-index { font-size: 11px; font-weight: 720; letter-spacing: .14em; opacity: .62; }
+    .project h3 { margin-top: 28px; font-size: clamp(40px, 4vw, 64px); line-height: 1; letter-spacing: -.06em; }
+    .project-en { margin-top: 9px; font-family: Georgia, serif; font-size: 18px; font-style: italic; opacity: .62; }
+    .project-tagline { margin-top: 30px; max-width: 390px; font-size: 22px; line-height: 1.48; letter-spacing: -.025em; }
+    .project-description { margin-top: 17px; max-width: 440px; color: rgba(23,25,23,.7); font-size: 14px; line-height: 1.9; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .project-tags span { padding: 7px 10px; border: 1px solid rgba(23,25,23,.16); border-radius: 999px; font-size: 10px; }
+    .project .actions { margin-top: auto; padding-top: 36px; }
+    .project .btn { border-color: rgba(23,25,23,.2); }
+    .project .btn.solid { color: #fff; background: var(--ink); border-color: var(--ink); }
+    .project-visual { position: relative; padding: 38px; min-width: 0; display: flex; align-items: center; justify-content: center; }
+    .project-dream { background: #dfdbea; }
+    .project-meeting { background: #dceaf0; }
+    .project-tietie { background: #e4eadf; }
+    .device { width: 100%; aspect-ratio: 1.5; overflow: hidden; border-radius: 28px; background: #fff; box-shadow: 0 34px 70px rgba(34,36,33,.14); border: 9px solid rgba(255,255,255,.76); }
+    .device img { width: 100%; height: 100%; border-radius: 19px; object-fit: cover; }
+    .project-meeting .device img { object-position: top center; }
+    .project-visual .device { position: relative; transition: transform .22s ease, box-shadow .22s ease; }
+    .project-visual:hover .device { transform: translateY(-5px); box-shadow: 0 42px 80px rgba(34,36,33,.18); }
+    .entry-hint { position: absolute; right: 18px; bottom: 18px; padding: 10px 14px; border-radius: 999px; color: #fff; background: rgba(18,21,19,.88); backdrop-filter: blur(12px); font-size: 11px; font-weight: 700; letter-spacing: .04em; }
+    .tietie-product { width: 100%; height: 100%; min-height: 510px; padding: 38px; border-radius: 28px 28px 0 0; background: #f8f8f3; box-shadow: 0 34px 70px rgba(34,36,33,.13); }
+    .tietie-toolbar { display: flex; justify-content: space-between; align-items: center; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+    .tietie-toolbar strong { font-size: 18px; }
+    .tietie-toolbar span { color: var(--muted); font-size: 11px; }
+    .upload-pill { margin: 26px 0 20px; padding: 22px; border: 1px dashed #99ac91; border-radius: 18px; color: #5d7453; text-align: center; font-size: 12px; }
+    .tietie-product .style-row { gap: 14px; }
+    .tietie-product .style-card { min-height: 210px; padding: 18px; border-radius: 20px; background: #fff; }
+    .tietie-product .style-card i { width: 72px; height: 72px; border-radius: 22px; font-size: 28px; }
+    .tietie-product .style-card span { font-size: 13px; }
+    .tietie-product .style-card small { color: var(--muted); font-size: 10px; }
+    .social-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .social-card { min-height: 290px; padding: 36px; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 28px; background: #fff; transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
+    a.social-card:hover { transform: translateY(-5px); border-color: rgba(23,25,23,.24); box-shadow: 0 24px 50px rgba(23,25,23,.09); }
+    .social-card.xhs { background: #f3e4e1; }
+    .social-card.wechat { background: #e2eee5; }
+    .social-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
+    .social-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 16px; color: #fff; background: #d33b32; font-size: 14px; font-weight: 800; }
+    .wechat .social-icon { background: #278b54; }
+    .wechat .social-icon svg { width: 30px; height: 30px; fill: currentColor; }
+    .social-card small { color: rgba(23,25,23,.56); font-size: 10px; font-weight: 730; letter-spacing: .14em; }
+    .social-card h3 { margin-top: 28px; font-size: 30px; letter-spacing: -.04em; }
+    .social-card p { max-width: 480px; margin-top: 13px; color: var(--muted); font-size: 14px; line-height: 1.85; }
+    .social-link { margin-top: auto; padding-top: 28px; font-size: 12px; font-weight: 700; }
+    .social-link span { display: inline-flex; padding: 9px 12px; border: 1px solid rgba(23,25,23,.2); border-radius: 999px; background: rgba(255,255,255,.48); }
+    .social-link.pending span { border-style: dashed; color: var(--muted); background: transparent; }
+    .contact { padding: 82px 0; color: #fff; background: var(--ink); }
+    .contact-inner { display: grid; grid-template-columns: 1.2fr .8fr; gap: 50px; align-items: end; }
+    .contact h2 { max-width: 720px; margin-top: 16px; }
+    .contact p { margin-top: 18px; color: #aeb3ac; font-size: 14px; }
+    .contact-links { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 12px; }
+    .contact .btn { color: #fff; border-color: rgba(255,255,255,.2); }
+    .contact .btn:hover { border-color: #fff; }
+    .footer { color: #aeb3ac; background: var(--ink); border-top: 1px solid rgba(255,255,255,.12); }
+    .footer-inner { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 11px; }
+    @media (max-width: 980px) {
+      .wrap { width: min(var(--wrap), calc(100% - 44px)); }
+      .hero-grid { grid-template-columns: 1fr; gap: 50px; }
+      .product-stage { min-height: 570px; max-width: 760px; width: 100%; margin-inline: auto; }
+      .section-head { grid-template-columns: 1fr; gap: 18px; }
+      .section-intro { justify-self: start; }
+      .project { grid-template-columns: 1fr; }
+      .project-copy { min-height: 500px; }
+      .project-visual { padding: 0 36px; min-height: 520px; }
+      .social-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 680px) {
+      .wrap { width: calc(100% - 32px); }
+      .nav-inner { height: 68px; }
+      .brand small, .nav-links a:not(.nav-cta) { display: none; }
+      .hero { padding: 58px 0 62px; }
+      h1 { font-size: clamp(48px, 15vw, 67px); }
+      .hero-lead { font-size: 15px; }
+      .identity-card { margin-top: 32px; }
+      .product-stage { min-height: 405px; }
+      .screen-dream { width: 72%; }
+      .screen-meeting { width: 55%; }
+      .screen-tietie { width: 64%; }
+      .style-card { min-height: 76px; padding: 8px; }
+      .style-card i { width: 28px; height: 28px; border-radius: 9px; font-size: 12px; }
+      .stage-label { display: none; }
+      .section { padding: 66px 0; }
+      .project { min-height: 0; border-radius: 24px; }
+      .project-copy { min-height: 470px; padding: 34px 26px; }
+      .project-visual { min-height: 300px; padding: 18px; }
+      .tietie-product { min-height: 390px; padding: 22px 16px; }
+      .tietie-product .style-row { gap: 7px; }
+      .tietie-product .style-card { min-height: 155px; padding: 11px; }
+      .tietie-product .style-card i { width: 48px; height: 48px; }
+      .contact-inner { grid-template-columns: 1fr; }
+      .contact-links { justify-content: flex-start; }
+      .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; padding: 22px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+  </style>
 </head>
 <body>
-  <main><h1>白一帆的作品集</h1><p>正在进入作品集。<a href="star-map-portfolio.html">点击继续 →</a></p></main>
-  <script>location.replace('star-map-portfolio.html' + location.search + location.hash);</script>
+  <nav class="nav" aria-label="主要导航">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="白一帆个人作品集首页"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M15.5 4.2 6.7 22.4h8.8V4.2Z" fill="currentColor"/><path d="M17.7 8.1 26 22.4h-8.3V8.1Z" fill="currentColor" opacity=".72"/><path d="M5.3 25.4h21.4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="25.2" cy="6.8" r="2.3" fill="#6f8cff"/></svg></span><span>白一帆<small>AI PRODUCT · PORTFOLIO</small></span></a>
+      <div class="nav-links"><a href="#projects">个人项目</a><a href="#channels">对外发声</a><a class="nav-cta" href="#contact">联系我 ↗</a></div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="kicker">BAI YIFAN · AI PRODUCT BUILDER</p>
+          <h1>复杂留给模型，<br><span>清晰留给用户。</span></h1>
+          <p class="hero-lead">围绕 AIGC、办公场景 Agent 与 AI+建筑，完成从需求定义、开源二次开发到上线验证的产品实践。</p>
+          <div class="actions"><a class="btn primary" href="#projects">查看三个产品 ↓</a><a class="btn" href="https://github.com/1298335431-hub" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+          <div class="identity-card"><img src="./assets/bai-yifan-portrait.jpg" alt="白一帆个人照片"><div><div class="identity-name"><strong>白一帆</strong><span>AI 产品经理 · 独立产品实践者</span></div><div class="identity-meta"><span>腾讯智影经历</span><span>建筑学硕士</span><span>AIGC · Agent · AI+建筑</span></div><p class="identity-now">正在推进：贴贴 · GitHub Skill 创作生态</p></div></div>
+        </div>
+        <div class="product-stage" aria-label="梦卡、MeetingPrep 和贴贴产品画面组合">
+          <span class="stage-glow" aria-hidden="true"></span>
+          <a class="screen screen-dream" href="https://seoshulk2a6fn66jib6rs.apigateway-cn-beijing.volceapi.com/" target="_blank" rel="noopener noreferrer" aria-label="打开梦卡"><img src="./assets/dreamcard-ui-cover.png" alt="梦卡真实首页"></a>
+          <a class="screen screen-meeting" href="https://s5gpjstgrhrpqd54s6976.apigateway-cn-beijing.volceapi.com/" target="_blank" rel="noopener noreferrer" aria-label="打开 MeetingPrep"><img src="./assets/meetingprep-calendar.png" alt="MeetingPrep 真实日历准备界面"></a>
+          <a class="screen screen-tietie" href="https://sv47l1ha6bddrf233tutq.apigateway-cn-beijing.volceapi.com/" target="_blank" rel="noopener noreferrer" aria-label="打开贴贴"><img src="./assets/tietie-ui-cover.png" alt="贴贴真实首页与 Skill 投稿入口"></a>
+          <span class="stage-label">3 个产品 · 均可查看源码或在线体验</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="section-head"><div><p class="section-number">01 / SELECTED PRODUCTS</p><h2>三个真实场景，<br>三种产品解法。</h2></div><p class="section-intro">不只展示项目名称，也展示实际界面、核心问题和交付结果。访客可以直接进入产品体验，也可以查看公开源码。</p></div>
+        <div class="projects">
+          <article class="project project-dream">
+            <div class="project-copy"><span class="project-index">01 / AIGC CREATION</span><h3>梦卡</h3><p class="project-en">DREAMCARD · 原「看山说梦」</p><p class="project-tagline">把醒来后零散的梦，留成一张可以保存的卡片。</p><p class="project-description">从梦境输入、梦象确认、参考性解读到梦卡生成，让记录自然走向表达。曾作为作品参加知乎活动。</p><div class="project-tags"><span>梦境记录</span><span>AI 生成</span><span>知乎活动作品</span></div><div class="actions"><a class="btn solid" href="https://seoshulk2a6fn66jib6rs.apigateway-cn-beijing.volceapi.com/" target="_blank" rel="noopener noreferrer">在线体验 ↗</a><a class="btn" href="https://github.com/1298335431-hub/lucidream" target="_blank" rel="noopener noreferrer">查看源码</a></div></div>
+            <a class="project-visual" href="https://seoshulk2a6fn66jib6rs.apigateway-cn-beijing.volceapi.com/" target="_blank" rel="noopener noreferrer" aria-label="打开梦卡在线产品"><div class="device"><img src="./assets/dreamcard-ui-cover.png" alt="梦卡真实首页：将梦境留作一张卡"><span class="entry-hint">点击进入产品 ↗</span></div></a>
+          </article>
+          <article class="project project-meeting">
+            <div class="project-copy"><span class="project-index">02 / WORKPLACE AGENT</span><h3>MeetingPrep</h3><p class="project-en">AI MEETING PREPARATION</p><p class="project-tagline">把 PRD、历史讨论和日历，整理成有出处的会前 Brief。</p><p class="project-description">支持飞书文档与日历只读接入，用来源、行号和原文引文降低 AI 结果的核对成本，并可连接 DeepSeek。</p><div class="project-tags"><span>飞书接入</span><span>DeepSeek</span><span>办公场景 Agent</span></div><div class="actions"><a class="btn solid" href="https://s5gpjstgrhrpqd54s6976.apigateway-cn-beijing.volceapi.com/" target="_blank" rel="noopener noreferrer">在线体验 ↗</a><a class="btn" href="https://github.com/1298335431-hub/meeting-prep" target="_blank" rel="noopener noreferrer">查看源码</a></div></div>
+            <a class="project-visual" href="https://s5gpjstgrhrpqd54s6976.apigateway-cn-beijing.volceapi.com/" target="_blank" rel="noopener noreferrer" aria-label="打开 MeetingPrep 在线产品"><div class="device"><img src="./assets/meetingprep-calendar.png" alt="MeetingPrep 真实界面：日历准备与会前 Brief"><span class="entry-hint">点击进入产品 ↗</span></div></a>
+          </article>
+          <article class="project project-tietie">
+            <div class="project-copy"><span class="project-index">03 / SKILL-DRIVEN IMAGE SOCIAL</span><h3>贴贴</h3><p class="project-en">TIETIE · OPEN-SOURCE SKILL CREATION</p><p class="project-tagline">从一个 Skill 开始创作，再把作品带进社交关系。</p><p class="project-description">下一阶段将以 GitHub Skill 仓库作为创作能力入口。用户先选择已上架的 Skill，再上传图片、生成、二次修改与分享；产品不在缺少 Skill 的情况下直接生图。</p><div class="project-tags"><span>开源 Skill 生态</span><span>GitHub 仓库</span><span>产品路线图</span></div><div class="actions"><a class="btn solid" href="https://sv47l1ha6bddrf233tutq.apigateway-cn-beijing.volceapi.com/" target="_blank" rel="noopener noreferrer">内测体验 ↗</a><a class="btn" href="https://github.com/1298335431-hub/tietie" target="_blank" rel="noopener noreferrer">查看源码</a></div></div>
+            <a class="project-visual" href="https://sv47l1ha6bddrf233tutq.apigateway-cn-beijing.volceapi.com/" target="_blank" rel="noopener noreferrer" aria-label="打开贴贴在线产品"><div class="device"><img src="./assets/tietie-ui-cover.png" alt="贴贴真实首页：创作、碰一碰与 GitHub Skill 投稿"><span class="entry-hint">点击进入产品 ↗</span></div></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="channels">
+      <div class="wrap">
+        <div class="section-head"><div><p class="section-number">02 / CONTENT CHANNELS</p><h2>产品之外，<br>继续记录产品。</h2></div><p class="section-intro">在小红书和公众号持续记录 AI 产品学习、项目迭代与独立开发过程。</p></div>
+        <div class="social-grid">
+          <a class="social-card xhs" href="https://www.xiaohongshu.com/user/profile/60d5353400000000200283d3" target="_blank" rel="noopener noreferrer" aria-label="打开梦里买座四合院的小红书主页"><div class="social-top"><span class="social-icon">小红书</span><small>AI PRODUCT NOTES</small></div><h3>梦里买座四合院</h3><p>建筑转 AI 产品，分享学习经验、产品思考与项目实践。小红书号：1158622151。</p><div class="social-link"><span>进入小红书主页 ↗</span></div></a>
+          <a class="social-card wechat" href="https://mp.weixin.qq.com/s/V-Ax3F13L4weYdo55-QBYA" target="_blank" rel="noopener noreferrer" aria-label="打开白一帆的微信公众号文章"><div class="social-top"><span class="social-icon" aria-label="微信公众号图标"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M27 12C14.85 12 5 20.06 5 30c0 5.55 3.12 10.52 8.03 13.82L10.5 51l8.42-4.2c2.55.78 5.28 1.2 8.08 1.2 1.18 0 2.34-.07 3.46-.21A19.08 19.08 0 0 1 29 40.5c0-9.67 8.06-17.69 18.5-19.17C43.9 15.72 36.22 12 27 12Zm-7.4 10.2a3.1 3.1 0 1 1 0 6.2 3.1 3.1 0 0 1 0-6.2Zm14.8 0a3.1 3.1 0 1 1 0 6.2 3.1 3.1 0 0 1 0-6.2Z"/><path d="M58.5 40.5c0-8.56-8.3-15.5-18.5-15.5s-18.5 6.94-18.5 15.5S29.8 56 40 56c2.28 0 4.46-.35 6.48-1l7.02 3.5-2.12-6.04c4.36-2.82 7.12-7.1 7.12-11.96ZM33.7 37.4a2.6 2.6 0 1 1 0-5.2 2.6 2.6 0 0 1 0 5.2Zm12.6 0a2.6 2.6 0 1 1 0-5.2 2.6 2.6 0 0 1 0 5.2Z"/></svg></span><small>WECHAT OFFICIAL ACCOUNT</small></div><h3>微信公众号</h3><p>沉淀较完整的产品拆解、Agent 方法与项目复盘。</p><div class="social-link"><span>阅读公众号文章 ↗</span></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact"><div class="wrap contact-inner"><div><p class="section-number">03 / LET'S CONNECT</p><h2>期待和你聊聊 AI 产品、Agent 与新的工作机会。</h2><p>产品实践 · 二次开发 · AI 场景探索</p></div><div class="contact-links"><a class="btn" href="mailto:1298335431@qq.com">1298335431@qq.com ↗</a><a class="btn" href="https://github.com/1298335431-hub" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><span>© 2026 白一帆 · AI Product Portfolio</span><span>Dreamcard · MeetingPrep · Tietie</span><a href="#top">返回顶部 ↑</a></div></footer>
 </body>
 </html>
