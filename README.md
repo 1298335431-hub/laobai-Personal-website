@@ -1,6 +1,6 @@
 # 白一帆 · AI 产品作品集
 
-[在线访问](https://1298335431-hub.github.io/laobai-Personal-website/) · [GitHub 主页](https://github.com/1298335431-hub) · [邮件联系](mailto:1298335431@qq.com)
+[在线访问](https://1298335431-hub.github.io/laobai-Personal-website/) · [GitHub 主页](https://github.com/1298335431-hub) · [1298335431@qq.com](mailto:1298335431@qq.com)
 
 白一帆的个人作品集，聚焦 AIGC 创作、办公场景 Agent 与 AI+建筑。页面展示真实产品界面、核心问题、在线体验和开源仓库入口。
 
